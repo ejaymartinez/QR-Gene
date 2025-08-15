@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Generator - ID, Fullname, Year</title>
+  <link rel="stylesheet" href="Styler.css">
+  <!-- QR generator library (QRious) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <h1>QR Generator</h1>
+    <form id="qrForm" autocomplete="off">
+      <label for="idNumber">ID Number</label>
+      <input id="idNumber" name="idNumber" type="text" inputmode="numeric" placeholder="e.g. 2023-1234" required>
+
+      <label for="fullName">Full Name</label>
+      <input id="fullName" name="fullName" type="text" placeholder="" required>
+
+      <label for="acadYear">Year</label>
+      <input id="acadYear" name="acadYear" type="text" placeholder="" required>
+
+      <div class="controls">
+        <button id="generateBtn" type="submit">Generate QR</button>
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </form>
+
+    <section class="preview">
+      
+      <canvas id="qrCanvas" width="300" height="300" aria-hidden="true"></canvas>
+      <div class="qr-meta" id="qrMeta"></div>
+      <div class="download-row">
+        <a id="downloadLink" download="qr.png" class="hidden">Download PNG</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
