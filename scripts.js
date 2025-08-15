@@ -4,7 +4,7 @@
     const form = document.getElementById('qrForm');
     const idInput = document.getElementById('idNumber');
     const nameInput = document.getElementById('fullName');
-    const acadInput = document.getElementById('acadYear');
+    const acadInput = document.getElementById('Year');
     const canvas = document.getElementById('qrCanvas');
     const meta = document.getElementById('qrMeta');
     const downloadLink = document.getElementById('downloadLink');
@@ -68,3 +68,4 @@
     // initial meta
     updateMeta();
     });
+
