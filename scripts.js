@@ -4,7 +4,7 @@
     const form = document.getElementById('qrForm');
     const idInput = document.getElementById('idNumber');
     const nameInput = document.getElementById('fullName');
-    const acadInput = document.getElementById('Year');
+    const yearInput = document.getElementById('Year');
     const canvas = document.getElementById('qrCanvas');
     const meta = document.getElementById('qrMeta');
     const downloadLink = document.getElementById('downloadLink');
@@ -17,13 +17,13 @@
         const payload = {
         id: idInput.value.trim(),
         name: nameInput.value.trim(),
-        acad: acadInput.value.trim()
+        acad: yearInput.value.trim()
         };
         return JSON.stringify(payload);
     }
 
     function updateMeta(){
-        if(!idInput.value && !nameInput.value && !acadInput.value){
+        if(!idInput.value && !nameInput.value && !yearInput.value){
         meta.textContent = '';
         downloadLink.classList.add('hidden');
         return;
@@ -34,7 +34,7 @@
     form.addEventListener('submit', function(e){
         e.preventDefault();
         // simple validation
-        if(!idInput.value.trim() || !nameInput.value.trim() || !acadInput.value.trim()){
+        if(!idInput.value.trim() || !nameInput.value.trim() || !yearInput.value.trim()){
         alert('Please fill all fields.');
         return;
         }
@@ -63,9 +63,10 @@
     });
 
     // Live meta update
-    [idInput, nameInput, acadInput].forEach(inp=>inp.addEventListener('input', updateMeta));
+    [idInput, nameInput, yearInput].forEach(inp=>inp.addEventListener('input', updateMeta));
 
     // initial meta
     updateMeta();
     });
+
 
